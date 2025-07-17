@@ -5,10 +5,9 @@ class PropertyFilter(FilterSet):
     class Meta:
         model = Property
         fields = {
-            'country':['exact'],
-            'year': ['gt', 'lt'],
-            'genre': ['exact'],
-            'status_movie': ['exact'],
-            'actor': ['exact'],
-            'director': ['exact'],
+            'city':['exact'],
+            'price_per_night': ['gt', 'lt'],
+            'address': ['exact'],
+            'property_type': ['exact'],
+            'rules': ['exact'],
         }

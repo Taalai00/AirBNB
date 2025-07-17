@@ -58,8 +58,8 @@ class Booking(models.Model):
         return self.property
 
 class Review(models.Model):
-    property = models.ForeignKey(Property, on_delete=models.CASCADE)
-    guest = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    property = models.ForeignKey(Property, on_delete=models.CASCADE, related_name='reviews')
+    guest = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='quest_user')
     rating = models.IntegerField(choices=[(i, str(i))for i in range(1, 6)], null=True, blank=True)
     comment = models.TextField()
     created_at = models.DateField(auto_now=True)
